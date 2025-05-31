@@ -1,0 +1,121 @@
+/* Global styles for the navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    position: fixed; /* Make the navbar fixed at the top */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    width: 100%; /* Ensure it spans the full width */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Logo */
+  .navbar-logo img {
+    width: 50px;
+  }
+  
+  /* Navbar items */
+  .navbar-nav {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .navbar-nav .nav-item {
+    margin: 0 15px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  .navbar-nav .nav-item:hover {
+    color: #f0f0f0;
+  }
+  
+  /* Mobile menu (toggle) styles */
+  .mobile-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+  }
+  
+  .mobile-menu .bar {
+    width: 30px;
+    height: 5px;
+    background-color: white;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+  }
+  
+  /* Active state for mobile toggle (hamburger animation) */
+  .mobile-menu.open .bar:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+  }
+  
+  .mobile-menu.open .bar:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .mobile-menu.open .bar:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+  }
+  
+  /* Responsive Styles */
+  
+  /* Mobile View - Show menu on small screens */
+  @media (max-width: 768px) {
+    /* Navbar items - hidden by default */
+    .navbar-nav {
+      display: none;
+      flex-direction: column;
+      background-color: #333;
+      width: 100%;
+      padding: 10px 0;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      right: 0;
+    }
+  
+    /* Show the navbar items when menu is open */
+    .navbar-nav.active {
+      display: flex;
+    }
+  
+    /* Show the mobile toggle button only on small screens */
+    .mobile-menu {
+      display: flex;
+    }
+  }
+  
+  /* Desktop View - Hide the toggle menu */
+  @media (min-width: 769px) {
+    .mobile-menu {
+      display: none;
+    }
+  
+    .navbar-nav {
+      display: flex;
+    }
+  }
+  
+  /* Optional hover effect on navbar items */
+  .navbar-nav .nav-item:hover {
+    color: #f0f0f0;
+  }
+  
+  /* Add padding to body to avoid navbar overlap */
+  body {
+    padding-top: 60px; /* Adjust this value to the height of your navbar */
+  }
+  

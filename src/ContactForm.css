@@ -1,0 +1,55 @@
+.contact-details-container {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  gap: 40px; /* Space between each contact item */
+  align-items: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.contact-icon {
+  font-size: 1.8rem;
+  color: #0077b5; /* Default LinkedIn blue color, adjust per icon */
+}
+
+.contact-item:nth-child(2) .contact-icon {
+  color: #0088cc; /* Telegram blue */
+}
+
+.contact-item:nth-child(3) .contact-icon {
+  color: #d44638; /* Gmail red */
+}
+
+.contact-link {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+  color: #0073e6; /* Slight hover effect */
+}
+@media (max-width: 600px) {
+  .contact-details-container {
+    flex-direction: column; /* Stack items vertically */
+    gap: 20px; /* Less gap for smaller screens */
+    padding: 15px;
+  }
+
+  .contact-item {
+    font-size: 1rem; /* Slightly smaller text */
+    gap: 8px;
+  }
+
+  .contact-icon {
+    font-size: 1.5rem; /* Slightly smaller icons */
+  }
+}
